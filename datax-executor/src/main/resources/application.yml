@@ -1,0 +1,25 @@
+# web port
+server:
+  port: ${SVC_PORT:8081}
+
+# log config
+logging:
+  config: classpath:logback.xml
+  path: /logs/executor/jobhandler
+
+datax:
+  job:
+    admin:
+      addresses: http://${datax.admin.ip}:${datax.admin.port}
+    executor:
+      appname: datax-executor
+      ip:
+      port: ${executor.port:9999}
+      logpath: /logs/executor/jobhandler
+      logretentiondays: 30
+    accessToken:
+
+  executor:
+    jsonpath: ${json.path}
+
+  pypath: ${python.path}
